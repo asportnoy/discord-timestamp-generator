@@ -73,17 +73,50 @@ function generate() {
 	output.innerHTML = '';
 	formats.forEach((format, i) => {
 		const row = document.createElement('tr');
-		[format.name, format.preview, format.markdown].forEach(text => {
+		[format.name, format.preview].forEach(text => {
 			const cell = document.createElement('td');
 			cell.textContent = text;
 			row.appendChild(cell);
 		});
+		const markdownCell = document.createElement('td');
+
+		const copygroup = document.createElement('div');
+		copygroup.classList.add('markdown');
+
+		const input = document.createElement('input');
+		input.value = format.markdown;
+		input.setAttribute('readonly', true);
+		input.addEventListener('focus', () => input.select());
+
 		const button = document.createElement('button');
+		button.classList.add('copy-btn');
 		button.setAttribute('data-clipboard-text', format.markdown);
 		button.innerText = 'Copy';
-		new ClipboardJS(button);
 
-		row.appendChild(button);
+		let resetTimeout;
+		new ClipboardJS(button)
+			.on('success', () => {
+				button.style.backgroundColor = '#00c853';
+				clearTimeout(resetTimeout);
+				resetTimeout = setTimeout(() => {
+					button.innerText = 'Copy';
+					button.style.backgroundColor = '';
+				}, 2000);
+			})
+			.on('error', e => {
+				console.error(e);
+				button.style.backgroundColor = '#d50000';
+				clearTimeout(resetTimeout);
+				resetTimeout = setTimeout(() => {
+					button.innerText = 'Copy';
+					button.style.backgroundColor = '';
+				}, 2000);
+			});
+
+		copygroup.appendChild(input);
+		copygroup.appendChild(button);
+		markdownCell.appendChild(copygroup);
+		row.appendChild(markdownCell);
 
 		output.appendChild(row);
 	});
