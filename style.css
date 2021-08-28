@@ -55,3 +55,17 @@ td {
 	padding: 5px;
 	border-radius: 5px;
 }
+
+h2 {
+	margin-top: 50px;
+	margin-bottom: 5px;
+}
+
+#about {
+	margin: 0;
+}
+
+a,
+a:focus {
+	color: white;
+}
