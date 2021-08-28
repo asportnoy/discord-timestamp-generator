@@ -38,6 +38,7 @@ td {
 	color: white;
 	font-family: monospace;
 	outline: none;
+	height: 25px;
 }
 
 .markdown button {
@@ -48,12 +49,8 @@ td {
 	border: none;
 	color: black;
 	transition: background-color 0.2s ease-in-out;
-}
-
-.markdown {
-	border: 2px solid white;
-	padding: 5px;
-	border-radius: 5px;
+	height: 21px;
+	margin: 2px 0px;
 }
 
 h2 {
