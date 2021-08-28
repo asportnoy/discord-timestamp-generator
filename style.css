@@ -1,0 +1,11 @@
+body {
+	font-family: sans-serif;
+}
+
+#output tr td:nth-child(3) {
+	font-family: monospace;
+	-webkit-user-select: all;
+	-moz-user-select: all;
+	-ms-user-select: all;
+	user-select: all;
+}
