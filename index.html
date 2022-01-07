@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Discord Markdown Timestamp Generator</title>
-		<link rel="stylesheet" href="style.css" />
-	</head>
-	<body>
-		<input type="datetime-local" id="datepicker" />
-		<table>
-			<thead>
-				<tr>
-					<th>Format</th>
-					<th>Preview</th>
-					<th>Markdown</th>
-				</tr>
-			</thead>
-			<tbody id="output"></tbody>
-		</table>
-		<br />
-		<h2>About</h2>
-		<p id="about">
-			Made by asportnoy#6969
-			<br />
-			<a href="https://github.com/asportnoy/discord-timestamp-generator/">Source Code</a>
-			<br />
-			<a href="https://discord.com/developers/docs/reference#message-formatting">Discord Docs</a>
-		</p>
 
-		<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-		<script src="https://unpkg.com/dayjs@1.8.21/plugin/localizedFormat.js"></script>
-		<script src="https://unpkg.com/dayjs@1.8.21/plugin/relativeTime.js"></script>
-		<script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
-		<script src="script.js"></script>
-	</body>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Discord Markdown Timestamp Generator</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+	<input type="datetime-local" id="datepicker" autofocus />
+	<table>
+		<thead>
+			<tr>
+				<th>Format</th>
+				<th>Preview</th>
+				<th>Markdown</th>
+			</tr>
+		</thead>
+		<tbody id="output"></tbody>
+	</table>
+	<br />
+	<h2>About</h2>
+	<p id="about">
+		Made by asportnoy#6969
+		<br />
+		<a href="https://github.com/asportnoy/discord-timestamp-generator/">Source Code</a>
+		<br />
+		<a href="https://discord.com/developers/docs/reference#message-formatting">Discord Docs</a>
+	</p>
+
+	<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+	<script src="https://unpkg.com/dayjs@1.8.21/plugin/localizedFormat.js"></script>
+	<script src="https://unpkg.com/dayjs@1.8.21/plugin/relativeTime.js"></script>
+	<script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+	<script src="script.js"></script>
+</body>
+
 </html>
